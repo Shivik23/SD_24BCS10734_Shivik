@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram name="Netflix System Design" id="netflix-system-design">
+    <mxGraphModel dx="1395" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="850" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#171717;fontColor=#ffffff;fontStyle=1;fontSize=20;align=left;spacingLeft=18;" value="NETFLIX — SIMPLIFIED SYSTEM DESIGN" vertex="1">
+          <mxGeometry height="50" width="1240" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#262626;fontColor=#dddddd;fontSize=12;align=left;spacingLeft=18;" value="Browse, search, play/resume content, and manage subscriptions across devices" vertex="1">
+          <mxGeometry height="28" width="1240" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="clients" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;strokeColor=#4b8f8f;fillColor=#e9f7f7;" value="Client&#xa;(Web / Mobile / TV)" vertex="1">
+          <mxGeometry height="60" width="180" x="560" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=13;align=center;verticalAlign=middle;fillColor=#f2ecff;strokeColor=#8064a2;" value="API Gateway&#xa;(auth, throttling)" vertex="1">
+          <mxGeometry height="60" width="180" x="560" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="mlmodels" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#eef7ee;strokeColor=#5b8c5a;" value="Recommendation Models" vertex="1">
+          <mxGeometry height="60" width="180" x="80" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="cdn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=13;align=center;verticalAlign=middle;fillColor=#f2ecff;strokeColor=#8064a2;" value="Global CDN&#xa;(video delivery)" vertex="1">
+          <mxGeometry height="60" width="240" x="960" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="g_core" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;rounded=1;fillColor=#edf5ff;strokeColor=#888888;fontSize=13;" value="CORE SERVICES" vertex="1">
+          <mxGeometry height="150" width="1140" x="80" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="recommend" parent="g_core" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#e8f1ff;strokeColor=#4f81bd;" value="Recommendation Service&#xa;(landing page)" vertex="1">
+          <mxGeometry height="75" width="210" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="search" parent="g_core" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#e8f1ff;strokeColor=#4f81bd;" value="Search Service" vertex="1">
+          <mxGeometry height="75" width="180" x="270" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="activity" parent="g_core" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#e8f1ff;strokeColor=#4f81bd;" value="Content Activity Service&#xa;(play / pause / resume)" vertex="1">
+          <mxGeometry height="75" width="220" x="480" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subscription" parent="g_core" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#e8f1ff;strokeColor=#4f81bd;" value="Subscription Service" vertex="1">
+          <mxGeometry height="75" width="190" x="730" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="paycallback" parent="g_core" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#e8f1ff;strokeColor=#4f81bd;" value="Payment Callback&#xa;&amp; Reconciler" vertex="1">
+          <mxGeometry height="75" width="150" x="950" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g_data" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;rounded=1;fillColor=#eef8ef;strokeColor=#888888;fontSize=13;" value="DATA &amp; STORAGE" vertex="1">
+          <mxGeometry height="130" width="700" x="80" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="watchhistorydb" parent="g_data" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#eef7ee;strokeColor=#5b8c5a;" value="Watch History&#xa;(DynamoDB + Cache)" vertex="1">
+          <mxGeometry height="65" width="220" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="searchindex" parent="g_data" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#eef7ee;strokeColor=#5b8c5a;" value="Search Index&#xa;(Elasticsearch)" vertex="1">
+          <mxGeometry height="65" width="200" x="280" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subdb" parent="g_data" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#eef7ee;strokeColor=#5b8c5a;" value="Subscriptions &amp; Payments&#xa;(DynamoDB)" vertex="1">
+          <mxGeometry height="65" width="160" x="510" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g_media" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;rounded=1;fillColor=#fff6e8;strokeColor=#888888;fontSize=13;" value="MEDIA PIPELINE" vertex="1">
+          <mxGeometry height="130" width="410" x="810" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="processor" parent="g_media" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#e8f1ff;strokeColor=#4f81bd;" value="Content Processor" vertex="1">
+          <mxGeometry height="60" width="150" x="25" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="objectstorage" parent="g_media" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#eef7ee;strokeColor=#5b8c5a;" value="Video Storage (S3)" vertex="1">
+          <mxGeometry height="60" width="150" x="200" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="payprovider" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=1.5;fontSize=12;align=center;verticalAlign=middle;fillColor=#fff0f0;strokeColor=#b85c5c;" value="Payment Provider" vertex="1">
+          <mxGeometry height="55" width="240" x="960" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="clients" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="clients" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="cdn" value="video streaming">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="g_core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="recommend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="mlmodels" value="personalized results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="g_core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="g_data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="subscription" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;startArrow=block;startFill=1;" target="payprovider" value="charge / webhook">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="paycallback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;startArrow=block;startFill=1;" target="payprovider">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="g_media" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="cdn" value="publish encoded video">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="processor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" target="objectstorage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=12;" value="Blue = application services   Green = data storage   Purple = infrastructure / delivery   Red = external systems" vertex="1">
+          <mxGeometry height="32" width="1140" x="80" y="780" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
